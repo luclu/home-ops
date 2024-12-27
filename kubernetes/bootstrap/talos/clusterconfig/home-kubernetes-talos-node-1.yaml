@@ -1,0 +1,104 @@
+version: v1alpha1
+debug: false
+persist: true
+machine:
+  type: worker
+  token: 7ivqdj.6iod0osis8odhmcl
+  ca:
+    crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJQakNCOGFBREFnRUNBaEJuM3p6TklscXVxYUR4VVRpWHhkZEFNQVVHQXl0bGNEQVFNUTR3REFZRFZRUUsKRXdWMFlXeHZjekFlRncweU5ERXlNamN4TnpJM01qQmFGdzB6TkRFeU1qVXhOekkzTWpCYU1CQXhEakFNQmdOVgpCQW9UQlhSaGJHOXpNQ293QlFZREsyVndBeUVBakQvVEwzRXN3Yy9nc054YTBiWnRlM3lqSUdJK3F3U1VuclQ4CklVNkNveHlqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDaERBZEJnTlZIU1VFRmpBVUJnZ3JCZ0VGQlFjREFRWUkKS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFkQmdOVkhRNEVGZ1FVNWxrdk4wWll1WVFhSEtPTwptQllGVDh4UmtKOHdCUVlESzJWd0EwRUFPbC83VE9XaFVQZU1UR3d0SWVZUlEvNzhVelVuVFVnUFhOSFJVUEZZClFkRnhzVVc2Tm1ZcVBJaUZNMlJhNDJCUjc2dzJ3N2RTQ2owdVFXS0dQb0FZREE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    key: ""
+  certSANs:
+    - 192.168.5.60
+    - 127.0.0.1
+  kubelet:
+    image: ghcr.io/siderolabs/kubelet:v1.32.0
+    extraArgs:
+      rotate-server-certificates: "true"
+    extraMounts:
+      - destination: /var/openebs/local
+        type: bind
+        source: /var/openebs/local
+        options:
+          - bind
+          - rshared
+          - rw
+    defaultRuntimeSeccompProfileEnabled: true
+    nodeIP:
+      validSubnets:
+        - 192.168.5.0/24
+    disableManifestsDirectory: true
+  network:
+    hostname: talos-node-1
+    interfaces:
+      - deviceSelector:
+          hardwareAddr: bc:24:11:88:98:b1
+        addresses:
+          - 192.168.5.71/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.5.1
+        mtu: 1500
+        dhcp: false
+    nameservers:
+      - 1.1.1.1
+      - 1.0.0.1
+    disableSearchDomain: true
+  install:
+    disk: /dev/sda
+    image: factory.talos.dev/installer/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba:v1.9.1
+    wipe: false
+  files:
+    - content: |-
+        [plugins."io.containerd.cri.v1.images"]
+          discard_unpacked_layers = false
+      permissions: 0o0
+      path: /etc/cri/conf.d/20-customization.part
+      op: create
+  time:
+    disabled: false
+    servers:
+      - 162.159.200.1
+      - 162.159.200.123
+  sysctls:
+    fs.inotify.max_user_instances: "8192"
+    fs.inotify.max_user_watches: "1048576"
+    net.core.rmem_max: "7500000"
+    net.core.wmem_max: "7500000"
+    vm.nr_hugepages: "1024"
+  features:
+    rbac: true
+    stableHostname: true
+    apidCheckExtKeyUsage: true
+    diskQuotaSupport: true
+    kubePrism:
+      enabled: true
+      port: 7445
+    hostDNS:
+      enabled: true
+      forwardKubeDNSToHost: true
+      resolveMemberNames: true
+cluster:
+  id: CZMVt1Zw2QS1FqFVCdBpl1aB40THvr_yncL6OZGXBlg=
+  secret: HNGLALKcu91fux6wAQRqE7ESp902bDqlka4BcBpRZbw=
+  controlPlane:
+    endpoint: https://192.168.5.60:6443
+  clusterName: home-kubernetes
+  network:
+    cni:
+      name: none
+    dnsDomain: cluster.local
+    podSubnets:
+      - 10.69.0.0/16
+    serviceSubnets:
+      - 10.96.0.0/16
+  token: jaulwn.5rpua541lib1t7vj
+  ca:
+    crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJpVENDQVMrZ0F3SUJBZ0lRQkp3eDhPYXlEdDlTOHZHelVSaVIwekFLQmdncWhrak9QUVFEQWpBVk1STXcKRVFZRFZRUUtFd3ByZFdKbGNtNWxkR1Z6TUI0WERUSTBNVEl5TnpFM01qY3hPVm9YRFRNME1USXlOVEUzTWpjeApPVm93RlRFVE1CRUdBMVVFQ2hNS2EzVmlaWEp1WlhSbGN6QlpNQk1HQnlxR1NNNDlBZ0VHQ0NxR1NNNDlBd0VICkEwSUFCSUtDSjAvbDJsR2tCRVA3ZWZraThHNnUwdDVzeUdoeGxBUWtMTm43UWN1RGpobEcwWHp1QitlWnkrMWgKOEJjNkhJQTgxS0tXZ0F4cmlCdVVwOFprZkJtallUQmZNQTRHQTFVZER3RUIvd1FFQXdJQ2hEQWRCZ05WSFNVRQpGakFVQmdnckJnRUZCUWNEQVFZSUt3WUJCUVVIQXdJd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFCkZnUVVYRzN2eFVTekFrUmxjWUZxOUhrWHMvUjZHLzh3Q2dZSUtvWkl6ajBFQXdJRFNBQXdSUUlnQ0Q1eTA4R2sKMWsyNlJCS1dRcmtQaGFXWWdEbmlicFhIME0za0lUbzJud2tDSVFEQ2JLQmRKTEdHa2lFeDBGd2N3VTNPcWg0VwpoUm5LOCtCUjhhM0twVm9Sanc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    key: ""
+  discovery:
+    enabled: true
+    registries:
+      kubernetes:
+        disabled: false
+      service:
+        disabled: true

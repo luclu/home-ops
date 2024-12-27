@@ -22,3 +22,8 @@ Brewfile.lock.json
 # Bootstrap
 /config.yaml
 cloudflared.json
+opentofu/.terraform
+opentofu/.terraform.lock.hcl
+opentofu/.terraform.tfstate.lock.info
+opentofu/terraform.tfstate
+opentofu/terraform.tfstate.backup
