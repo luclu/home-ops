@@ -15,13 +15,13 @@ resource "proxmox_vm_qemu" "kube-controller" {
   cores       = each.value.cores
   onboot      = true
   tags        = each.value.tags
-  #efidisk {
-  #  efitype = "4m"
-  #  storage = "ssd1"
-  #}
-  #vga {
-  #  type = "qxl"
-  #}
+
+
+  ipconfig0 = each.value.ipconfig
+  efidisk {
+   efitype = "4m"
+   storage = "ssd1"
+  }
   network {
     id = 0
     model    = "virtio"
@@ -33,7 +33,12 @@ resource "proxmox_vm_qemu" "kube-controller" {
     ide {
       ide0 {
         cdrom {
-          iso = "cephfs:iso/talos-metal-amd64-secureboot.iso"
+          iso = "cephfs:iso/talos-nocloud-amd64.iso"
+        }
+      }
+      ide3 {
+        cloudinit {
+          storage = "ssd1"
         }
       }
     }
