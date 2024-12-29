@@ -6,6 +6,8 @@ resources:
   - ./cilium.yaml
   - ./coredns.yaml
   - ./desec.yaml
+  - ./external-secrets.yaml
+  - ./ingress-nginx.yaml
   - ./jetstack.yaml
   - ./metrics-server.yaml
   - ./openebs.yaml
