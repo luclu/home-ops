@@ -39,25 +39,47 @@ spec:
   interval: 30m
   retryInterval: 1m
   timeout: 5m
-# ---
-# apiVersion: kustomize.toolkit.fluxcd.io/v1
-# kind: Kustomization
-# metadata:
-#   name: &app cert-manager-desec-webhook
-#   namespace: flux-system
-# spec:
-#   targetNamespace: cert-manager
-#   commonMetadata:
-#     labels:
-#       app.kubernetes.io/name: *app
-#   dependsOn:
-#     - name: cert-manager
-#   path: ./kubernetes/apps/cert-manager/cert-manager/desec-webhook
-#   prune: true
-#   sourceRef:
-#     kind: GitRepository
-#     name: home-kubernetes
-#   wait: true
-#   interval: 30m
-#   retryInterval: 1m
-#   timeout: 5m
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: &app desec
+  namespace: flux-system
+spec:
+  targetNamespace: cert-manager
+  commonMetadata:
+    labels:
+      app.kubernetes.io/name: *app
+  dependsOn:
+    - name: cert-manager
+  path: ./kubernetes/apps/cert-manager/cert-manager/desec
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: home-kubernetes
+  wait: true
+  interval: 30m
+  retryInterval: 1m
+  timeout: 5m
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: &app cert-manager-certificates
+  namespace: flux-system
+spec:
+  targetNamespace: cert-manager
+  commonMetadata:
+    labels:
+      app.kubernetes.io/name: *app
+  dependsOn:
+    - name: desec
+  path: ./kubernetes/apps/cert-manager/cert-manager/certificates
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: home-kubernetes
+  wait: true
+  interval: 30m
+  retryInterval: 1m
+  timeout: 5m

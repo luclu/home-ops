@@ -2,41 +2,43 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: desec-http
+  name: letsencrypt
 spec:
   acme:
-    email: "${SECRET_ACME_EMAIL}"
     server: https://acme-v02.api.letsencrypt.org/directory
+    email: "${SECRET_ACME_EMAIL}"
+
     privateKeySecretRef:
-      name: cert-manager-desec-http-secret
+      name: letsencrypt
+
     solvers:
-    - dns01:
-        webhook:
-          groupName: "${SECRET_DOMAIN}"
-          solverName: desec-http
-          config:
-            apiUrl: https://desec.io/api/v1
-            domainName: "${SECRET_DOMAIN}"
-            secretName: cert-domain-tls-key-"${SECRET_DOMAIN}"
-            secretKeyName: desec-token
+      - dns01:
+          webhook:
+            config:
+              apiKeySecretRef:
+                key: token
+                name: desec-token-secret
+            groupName: acme.${SECRET_DOMAIN}
+            solverName: desec
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: desec-http-staging
+  name: letsencrypt-staging
 spec:
   acme:
-    email: "${SECRET_ACME_EMAIL}"
     server: https://acme-staging-v02.api.letsencrypt.org/directory
+    email: "${SECRET_ACME_EMAIL}"
+
     privateKeySecretRef:
-      name: cert-manager-desec-http-secret
+      name: letsencrypt-staging
+
     solvers:
-    - dns01:
-        webhook:
-          groupName: "${SECRET_DOMAIN}"
-          solverName: desec-http
-          config:
-            apiUrl: https://desec.io/api/v1
-            domainName: "${SECRET_DOMAIN}"
-            secretName: cert-domain-tls-key-"${SECRET_DOMAIN}"
-            secretKeyName: desec-token
+      - dns01:
+          webhook:
+            config:
+              apiKeySecretRef:
+                key: token
+                name: desec-token-secret
+            groupName: acme.${SECRET_DOMAIN}
+            solverName: desec
