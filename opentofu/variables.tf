@@ -2,7 +2,7 @@
 variable "common" {
   type = map(string)
   default = {
-    clone         = "talos-template"
+    #clone         = "talos-template"
     #search_domain = "lu.fo"
     nameserver    = "192.168.5.1"
   }

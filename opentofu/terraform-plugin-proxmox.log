@@ -1,0 +1,444 @@
+[90mSun, 16 Feb 2025 10:41:03 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/util.go:156[0m[36m >[0m [1mEnabling the capture of log-library logs as ithe _capturelog flag was detected[0m
+[90mSun, 16 Feb 2025 10:41:03 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/util.go:189[0m[36m >[0m [1mLogging Started. Root Logger Set to level debug[0m
+[90mSun, 16 Feb 2025 10:41:04 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/util.go:156[0m[36m >[0m [1mEnabling the capture of log-library logs as ithe _capturelog flag was detected[0m
+[90mSun, 16 Feb 2025 10:41:04 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/util.go:189[0m[36m >[0m [1mLogging Started. Root Logger Set to level debug[0m
+2025/02/16 10:41:04 [DEBUG] setting computed for "smbios" from ComputedKeys
+2025/02/16 10:41:04 [DEBUG] setting computed for "unused_disk" from ComputedKeys
+2025/02/16 10:41:04 [DEBUG] setting computed for "unused_disk" from ComputedKeys
+2025/02/16 10:41:04 [DEBUG] setting computed for "smbios" from ComputedKeys
+2025/02/16 10:41:04 [DEBUG] setting computed for "unused_disk" from ComputedKeys
+2025/02/16 10:41:04 [DEBUG] setting computed for "smbios" from ComputedKeys
+[90mSun, 16 Feb 2025 10:41:04 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/resource_vm_qemu.go:689[0m[36m >[0m [1mVM creation[0m [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+[90mSun, 16 Feb 2025 10:41:04 +0000[0m DBG [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/resource_vm_qemu.go:690[0m[36m >[0m VM creation resource data: '' [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+[90mSun, 16 Feb 2025 10:41:04 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/resource_vm_qemu.go:689[0m[36m >[0m [1mVM creation[0m [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+[90mSun, 16 Feb 2025 10:41:04 +0000[0m DBG [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/resource_vm_qemu.go:690[0m[36m >[0m VM creation resource data: '' [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+2025/02/16 10:41:04 [DEBUG][QemuVmCreate] checking for duplicate name: talos-controller-1
+[90mSun, 16 Feb 2025 10:41:04 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/resource_vm_qemu.go:689[0m[36m >[0m [1mVM creation[0m [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+[90mSun, 16 Feb 2025 10:41:04 +0000[0m DBG [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/resource_vm_qemu.go:690[0m[36m >[0m VM creation resource data: '' [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+2025/02/16 10:41:04 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:41:04 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1540
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:41:04 GMT
+Expires: Sun, 16 Feb 2025 10:41:04 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"uptime":174055,"diskwrite":714090496,"node":"pve1","maxmem":4294967296,"mem":1010378970,"netout":79713386,"hastate":"started","id":"qemu/101","diskread":333062144,"status":"running","netin":231082201,"maxdisk":137438953472,"type":"qemu","name":"roon","maxcpu":4,"cpu":0.0119630999627385,"disk":0,"template":0,"vmid":101},{"mem":0,"netout":0,"node":"pve1","maxmem":137438953472,"uptime":0,"diskwrite":0,"vmid":102,"type":"qemu","name":"dappnode","maxcpu":24,"disk":0,"template":0,"cpu":0,"netin":0,"maxdisk":5368709120000,"id":"qemu/102","status":"stopped","diskread":0},{"netout":26968450151,"mem":5654478848,"hastate":"started","diskwrite":12385749504,"uptime":174055,"tags":" ","maxmem":8589934592,"node":"pve2","cpu":0.262066394958248,"disk":0,"template":0,"type":"qemu","name":"haos","maxcpu":4,"vmid":103,"id":"qemu/103","lock":"backup","diskread":4002544128,"status":"running","netin":525848499240,"maxdisk":34359738368},{"status":"running","diskread":606127801344,"id":"qemu/105","maxdisk":274877906944,"netin":204739940766,"maxcpu":8,"name":"truenas","type":"qemu","cpu":0.0260429180146361,"disk":0,"template":0,"vmid":105,"uptime":174058,"diskwrite":352394055680,"node":"pve3","maxmem":21474836480,"mem":19746062336,"netout":716936837584,"hastate":"started"},{"mem":0,"netout":0,"node":"pve1","maxmem":2147483648,"uptime":0,"diskwrite":0,"vmid":200,"type":"qemu","name":"talos-cloudinit-template","maxcpu":4,"disk":0,"template":1,"cpu":0,"netin":0,"maxdisk":34359738368,"id":"qemu/200","status":"stopped","diskread":0}]}
+2025/02/16 10:41:04 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/nextid HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:41:04 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 14
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:41:04 GMT
+Expires: Sun, 16 Feb 2025 10:41:04 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"100"}
+2025/02/16 10:41:04 [DEBUG][QemuVmCreate] create with ISO
+2025/02/16 10:41:04 >>>>>>>>>> REQUEST:
+GET /api2/json/version HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:41:04 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 72
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:41:04 GMT
+Expires: Sun, 16 Feb 2025 10:41:04 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"repoid":"f157a38b211595d6","version":"8.3.3","release":"8.3"}}
+2025/02/16 10:41:04 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve/qemu HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 245
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+agent=0&balloon=0&bios=seabios&ciupgrade=0&cores=1&cpu=host&description=Managed+by+Terraform.&hotplug=network%2Cdisk%2Cusb&kvm=1&memory=512&name=talos-controller-1&numa=0&onboot=0&protection=0&scsihw=lsi&sockets=1&sshkeys=%250A&tablet=1&vmid=261
+2025/02/16 10:41:04 <<<<<<<<<< RESULT:
+HTTP/1.1 595 Connection refused
+Connection: close
+Cache-Control: max-age=0
+Date: Sun, 16 Feb 2025 10:41:04 GMT
+Expires: Sun, 16 Feb 2025 10:41:04 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+2025/02/16 10:41:04 [DEBUG][QemuVmCreate] checking for duplicate name: talos-controller-3
+2025/02/16 10:41:04 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:41:04 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1540
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:41:04 GMT
+Expires: Sun, 16 Feb 2025 10:41:04 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"node":"pve1","maxmem":4294967296,"uptime":174055,"diskwrite":714090496,"hastate":"started","mem":1010378970,"netout":79713386,"maxdisk":137438953472,"netin":231082201,"status":"running","diskread":333062144,"id":"qemu/101","vmid":101,"maxcpu":4,"name":"roon","type":"qemu","template":0,"disk":0,"cpu":0.0119630999627385},{"netout":0,"mem":0,"maxmem":137438953472,"node":"pve1","diskwrite":0,"uptime":0,"vmid":102,"template":0,"disk":0,"cpu":0,"name":"dappnode","type":"qemu","maxcpu":24,"netin":0,"maxdisk":5368709120000,"id":"qemu/102","diskread":0,"status":"stopped"},{"vmid":103,"template":0,"disk":0,"cpu":0.262066394958248,"maxcpu":4,"type":"qemu","name":"haos","maxdisk":34359738368,"netin":525848499240,"diskread":4002544128,"status":"running","id":"qemu/103","lock":"backup","hastate":"started","netout":26968450151,"mem":5654478848,"tags":" ","maxmem":8589934592,"node":"pve2","diskwrite":12385749504,"uptime":174055},{"id":"qemu/105","status":"running","diskread":606127801344,"netin":204739940766,"maxdisk":274877906944,"name":"truenas","type":"qemu","maxcpu":8,"template":0,"disk":0,"cpu":0.0260429180146361,"vmid":105,"uptime":174058,"diskwrite":352394055680,"node":"pve3","maxmem":21474836480,"mem":19746062336,"netout":716936837584,"hastate":"started"},{"netout":0,"mem":0,"maxmem":2147483648,"node":"pve1","diskwrite":0,"uptime":0,"vmid":200,"cpu":0,"disk":0,"template":1,"type":"qemu","name":"talos-cloudinit-template","maxcpu":4,"netin":0,"maxdisk":34359738368,"id":"qemu/200","status":"stopped","diskread":0}]}
+2025/02/16 10:41:04 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/nextid HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:41:04 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 14
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:41:04 GMT
+Expires: Sun, 16 Feb 2025 10:41:04 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"100"}
+2025/02/16 10:41:04 [DEBUG][QemuVmCreate] create with ISO
+2025/02/16 10:41:04 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve/qemu HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 245
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+agent=0&balloon=0&bios=seabios&ciupgrade=0&cores=1&cpu=host&description=Managed+by+Terraform.&hotplug=network%2Cdisk%2Cusb&kvm=1&memory=512&name=talos-controller-3&numa=0&onboot=0&protection=0&scsihw=lsi&sockets=1&sshkeys=%250A&tablet=1&vmid=263
+2025/02/16 10:41:04 <<<<<<<<<< RESULT:
+HTTP/1.1 595 Connection refused
+Connection: close
+Cache-Control: max-age=0
+Date: Sun, 16 Feb 2025 10:41:04 GMT
+Expires: Sun, 16 Feb 2025 10:41:04 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+2025/02/16 10:41:04 [DEBUG][QemuVmCreate] checking for duplicate name: talos-controller-2
+2025/02/16 10:41:04 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:41:04 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1540
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:41:04 GMT
+Expires: Sun, 16 Feb 2025 10:41:04 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"uptime":174055,"diskwrite":714090496,"node":"pve1","maxmem":4294967296,"mem":1010378970,"netout":79713386,"hastate":"started","status":"running","diskread":333062144,"id":"qemu/101","maxdisk":137438953472,"netin":231082201,"maxcpu":4,"type":"qemu","name":"roon","template":0,"disk":0,"cpu":0.0119630999627385,"vmid":101},{"vmid":102,"maxcpu":24,"type":"qemu","name":"dappnode","disk":0,"cpu":0,"template":0,"maxdisk":5368709120000,"netin":0,"status":"stopped","diskread":0,"id":"qemu/102","mem":0,"netout":0,"node":"pve1","maxmem":137438953472,"uptime":0,"diskwrite":0},{"name":"haos","type":"qemu","maxcpu":4,"disk":0,"cpu":0.262066394958248,"template":0,"vmid":103,"id":"qemu/103","lock":"backup","status":"running","diskread":4002544128,"netin":525848499240,"maxdisk":34359738368,"mem":5654478848,"netout":26968450151,"hastate":"started","uptime":174055,"diskwrite":12385749504,"node":"pve2","tags":" ","maxmem":8589934592},{"vmid":105,"name":"truenas","type":"qemu","maxcpu":8,"disk":0,"template":0,"cpu":0.0260429180146361,"netin":204739940766,"maxdisk":274877906944,"id":"qemu/105","diskread":606127801344,"status":"running","hastate":"started","mem":19746062336,"netout":716936837584,"node":"pve3","maxmem":21474836480,"uptime":174058,"diskwrite":352394055680},{"uptime":0,"diskwrite":0,"node":"pve1","maxmem":2147483648,"mem":0,"netout":0,"id":"qemu/200","status":"stopped","diskread":0,"netin":0,"maxdisk":34359738368,"type":"qemu","name":"talos-cloudinit-template","maxcpu":4,"template":1,"disk":0,"cpu":0,"vmid":200}]}
+2025/02/16 10:41:04 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/nextid HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:41:04 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 14
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:41:04 GMT
+Expires: Sun, 16 Feb 2025 10:41:04 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"100"}
+2025/02/16 10:41:04 [DEBUG][QemuVmCreate] create with ISO
+2025/02/16 10:41:04 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve/qemu HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 245
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+agent=0&balloon=0&bios=seabios&ciupgrade=0&cores=1&cpu=host&description=Managed+by+Terraform.&hotplug=network%2Cdisk%2Cusb&kvm=1&memory=512&name=talos-controller-2&numa=0&onboot=0&protection=0&scsihw=lsi&sockets=1&sshkeys=%250A&tablet=1&vmid=262
+2025/02/16 10:41:04 <<<<<<<<<< RESULT:
+HTTP/1.1 595 Connection refused
+Connection: close
+Cache-Control: max-age=0
+Date: Sun, 16 Feb 2025 10:41:04 GMT
+Expires: Sun, 16 Feb 2025 10:41:04 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+[90mSun, 16 Feb 2025 10:42:31 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/util.go:156[0m[36m >[0m [1mEnabling the capture of log-library logs as ithe _capturelog flag was detected[0m
+[90mSun, 16 Feb 2025 10:42:31 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/util.go:189[0m[36m >[0m [1mLogging Started. Root Logger Set to level debug[0m
+[90mSun, 16 Feb 2025 10:42:33 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/util.go:156[0m[36m >[0m [1mEnabling the capture of log-library logs as ithe _capturelog flag was detected[0m
+[90mSun, 16 Feb 2025 10:42:33 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/util.go:189[0m[36m >[0m [1mLogging Started. Root Logger Set to level debug[0m
+2025/02/16 10:42:33 [DEBUG] setting computed for "unused_disk" from ComputedKeys
+2025/02/16 10:42:33 [DEBUG] setting computed for "smbios" from ComputedKeys
+[90mSun, 16 Feb 2025 10:42:33 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/resource_vm_qemu.go:687[0m[36m >[0m [1mVM creation[0m [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+[90mSun, 16 Feb 2025 10:42:33 +0000[0m DBG [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/resource_vm_qemu.go:688[0m[36m >[0m VM creation resource data: '' [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+2025/02/16 10:42:33 [DEBUG][QemuVmCreate] checking for duplicate name: talos-controller-1
+2025/02/16 10:42:33 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:42:33 [DEBUG] setting computed for "smbios" from ComputedKeys
+2025/02/16 10:42:33 [DEBUG] setting computed for "unused_disk" from ComputedKeys
+2025/02/16 10:42:33 [DEBUG] setting computed for "smbios" from ComputedKeys
+2025/02/16 10:42:33 [DEBUG] setting computed for "unused_disk" from ComputedKeys
+[90mSun, 16 Feb 2025 10:42:33 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/resource_vm_qemu.go:687[0m[36m >[0m [1mVM creation[0m [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+[90mSun, 16 Feb 2025 10:42:33 +0000[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/resource_vm_qemu.go:687[0m[36m >[0m [1mVM creation[0m [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+[90mSun, 16 Feb 2025 10:42:33 +0000[0m DBG [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/resource_vm_qemu.go:688[0m[36m >[0m VM creation resource data: '' [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+[90mSun, 16 Feb 2025 10:42:33 +0000[0m DBG [1mgithub.com/Telmate/terraform-provider-proxmox/v2/proxmox/resource_vm_qemu.go:688[0m[36m >[0m VM creation resource data: '' [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+2025/02/16 10:42:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1539
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:42:33 GMT
+Expires: Sun, 16 Feb 2025 10:42:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"type":"qemu","name":"roon","maxcpu":4,"disk":0,"template":0,"cpu":0.0108119777926283,"vmid":101,"id":"qemu/101","diskread":333062144,"status":"running","netin":231188744,"maxdisk":137438953472,"mem":1006802408,"netout":79744078,"hastate":"started","uptime":174145,"diskwrite":714385408,"node":"pve1","maxmem":4294967296},{"template":0,"disk":0,"cpu":0,"name":"dappnode","type":"qemu","maxcpu":24,"vmid":102,"id":"qemu/102","status":"stopped","diskread":0,"netin":0,"maxdisk":5368709120000,"netout":0,"mem":0,"diskwrite":0,"uptime":0,"maxmem":137438953472,"node":"pve1"},{"maxdisk":34359738368,"netin":526143164342,"status":"running","diskread":4002687488,"lock":"backup","id":"qemu/103","vmid":103,"maxcpu":4,"name":"haos","type":"qemu","disk":0,"cpu":0.261808554786788,"template":0,"node":"pve2","tags":" ","maxmem":8589934592,"uptime":174145,"diskwrite":12388682240,"hastate":"started","mem":5968551936,"netout":26968980956},{"vmid":105,"cpu":0.016328628988766,"disk":0,"template":0,"maxcpu":8,"name":"truenas","type":"qemu","maxdisk":274877906944,"netin":204742562425,"status":"running","diskread":606435394560,"id":"qemu/105","hastate":"started","netout":717573745263,"mem":19701182464,"maxmem":21474836480,"node":"pve3","diskwrite":352397176832,"uptime":174149},{"id":"qemu/200","status":"stopped","diskread":0,"netin":0,"maxdisk":34359738368,"disk":0,"template":1,"cpu":0,"type":"qemu","name":"talos-cloudinit-template","maxcpu":4,"vmid":200,"diskwrite":0,"uptime":0,"maxmem":2147483648,"node":"pve1","netout":0,"mem":0}]}
+2025/02/16 10:42:33 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/nextid HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:42:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 14
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:42:33 GMT
+Expires: Sun, 16 Feb 2025 10:42:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"100"}
+2025/02/16 10:42:33 [DEBUG][QemuVmCreate] create with ISO
+2025/02/16 10:42:33 >>>>>>>>>> REQUEST:
+GET /api2/json/version HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:42:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 72
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:42:33 GMT
+Expires: Sun, 16 Feb 2025 10:42:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"release":"8.3","repoid":"f157a38b211595d6","version":"8.3.3"}}
+2025/02/16 10:42:33 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve/qemu HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 211
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+agent=0&balloon=0&bios=seabios&ciupgrade=0&cores=1&cpu=host&hotplug=network%2Cdisk%2Cusb&kvm=1&memory=512&name=talos-controller-1&numa=0&onboot=0&protection=0&scsihw=lsi&sockets=1&sshkeys=%250A&tablet=1&vmid=261
+2025/02/16 10:42:33 <<<<<<<<<< RESULT:
+HTTP/1.1 595 Connection refused
+Connection: close
+Cache-Control: max-age=0
+Date: Sun, 16 Feb 2025 10:42:33 GMT
+Expires: Sun, 16 Feb 2025 10:42:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+2025/02/16 10:42:33 [DEBUG][QemuVmCreate] checking for duplicate name: talos-controller-3
+2025/02/16 10:42:33 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:42:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1539
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:42:33 GMT
+Expires: Sun, 16 Feb 2025 10:42:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"netout":79744078,"mem":1006802408,"hastate":"started","diskwrite":714385408,"uptime":174145,"maxmem":4294967296,"node":"pve1","template":0,"disk":0,"cpu":0.0108119777926283,"name":"roon","type":"qemu","maxcpu":4,"vmid":101,"id":"qemu/101","status":"running","diskread":333062144,"netin":231188744,"maxdisk":137438953472},{"netout":0,"mem":0,"diskwrite":0,"uptime":0,"maxmem":137438953472,"node":"pve1","disk":0,"cpu":0,"template":0,"maxcpu":24,"type":"qemu","name":"dappnode","vmid":102,"diskread":0,"status":"stopped","id":"qemu/102","maxdisk":5368709120000,"netin":0},{"hastate":"started","mem":5968551936,"netout":26968980956,"node":"pve2","maxmem":8589934592,"tags":" ","uptime":174145,"diskwrite":12388682240,"vmid":103,"maxcpu":4,"name":"haos","type":"qemu","disk":0,"template":0,"cpu":0.261808554786788,"maxdisk":34359738368,"netin":526143164342,"diskread":4002687488,"status":"running","lock":"backup","id":"qemu/103"},{"mem":19701182464,"netout":717573745263,"hastate":"started","uptime":174149,"diskwrite":352397176832,"node":"pve3","maxmem":21474836480,"type":"qemu","name":"truenas","maxcpu":8,"disk":0,"template":0,"cpu":0.016328628988766,"vmid":105,"id":"qemu/105","diskread":606435394560,"status":"running","netin":204742562425,"maxdisk":274877906944},{"id":"qemu/200","status":"stopped","diskread":0,"netin":0,"maxdisk":34359738368,"type":"qemu","name":"talos-cloudinit-template","maxcpu":4,"template":1,"disk":0,"cpu":0,"vmid":200,"uptime":0,"diskwrite":0,"node":"pve1","maxmem":2147483648,"mem":0,"netout":0}]}
+2025/02/16 10:42:33 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/nextid HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:42:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 14
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:42:33 GMT
+Expires: Sun, 16 Feb 2025 10:42:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"100"}
+2025/02/16 10:42:33 [DEBUG][QemuVmCreate] create with ISO
+2025/02/16 10:42:33 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve/qemu HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 211
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+agent=0&balloon=0&bios=seabios&ciupgrade=0&cores=1&cpu=host&hotplug=network%2Cdisk%2Cusb&kvm=1&memory=512&name=talos-controller-3&numa=0&onboot=0&protection=0&scsihw=lsi&sockets=1&sshkeys=%250A&tablet=1&vmid=263
+2025/02/16 10:42:33 <<<<<<<<<< RESULT:
+HTTP/1.1 595 Connection refused
+Connection: close
+Cache-Control: max-age=0
+Date: Sun, 16 Feb 2025 10:42:33 GMT
+Expires: Sun, 16 Feb 2025 10:42:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+2025/02/16 10:42:33 [DEBUG][QemuVmCreate] checking for duplicate name: talos-controller-2
+2025/02/16 10:42:33 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:42:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1539
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:42:33 GMT
+Expires: Sun, 16 Feb 2025 10:42:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"vmid":101,"disk":0,"template":0,"cpu":0.0108119777926283,"name":"roon","type":"qemu","maxcpu":4,"netin":231188744,"maxdisk":137438953472,"id":"qemu/101","diskread":333062144,"status":"running","hastate":"started","netout":79744078,"mem":1006802408,"maxmem":4294967296,"node":"pve1","diskwrite":714385408,"uptime":174145},{"mem":0,"netout":0,"node":"pve1","maxmem":137438953472,"uptime":0,"diskwrite":0,"vmid":102,"maxcpu":24,"type":"qemu","name":"dappnode","template":0,"disk":0,"cpu":0,"maxdisk":5368709120000,"netin":0,"diskread":0,"status":"stopped","id":"qemu/102"},{"vmid":103,"template":0,"disk":0,"cpu":0.261808554786788,"maxcpu":4,"name":"haos","type":"qemu","maxdisk":34359738368,"netin":526143164342,"status":"running","diskread":4002687488,"lock":"backup","id":"qemu/103","hastate":"started","netout":26968980956,"mem":5968551936,"tags":" ","maxmem":8589934592,"node":"pve2","diskwrite":12388682240,"uptime":174145},{"mem":19701182464,"netout":717573745263,"hastate":"started","uptime":174149,"diskwrite":352397176832,"node":"pve3","maxmem":21474836480,"maxcpu":8,"type":"qemu","name":"truenas","disk":0,"template":0,"cpu":0.016328628988766,"vmid":105,"diskread":606435394560,"status":"running","id":"qemu/105","maxdisk":274877906944,"netin":204742562425},{"disk":0,"template":1,"cpu":0,"maxcpu":4,"name":"talos-cloudinit-template","type":"qemu","vmid":200,"diskread":0,"status":"stopped","id":"qemu/200","maxdisk":34359738368,"netin":0,"netout":0,"mem":0,"diskwrite":0,"uptime":0,"maxmem":2147483648,"node":"pve1"}]}
+2025/02/16 10:42:33 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/nextid HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Accept-Encoding: gzip
+
+2025/02/16 10:42:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 14
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Sun, 16 Feb 2025 10:42:33 GMT
+Expires: Sun, 16 Feb 2025 10:42:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"100"}
+2025/02/16 10:42:33 [DEBUG][QemuVmCreate] create with ISO
+2025/02/16 10:42:33 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve/qemu HTTP/1.1
+Host: 192.168.5.51:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 211
+Accept: application/json
+Authorization: PVEAPIToken=opentofu@pve!mytoken=e8bfa130-83ac-4f86-83be-9590cf1c43b8
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+agent=0&balloon=0&bios=seabios&ciupgrade=0&cores=1&cpu=host&hotplug=network%2Cdisk%2Cusb&kvm=1&memory=512&name=talos-controller-2&numa=0&onboot=0&protection=0&scsihw=lsi&sockets=1&sshkeys=%250A&tablet=1&vmid=262
+2025/02/16 10:42:33 <<<<<<<<<< RESULT:
+HTTP/1.1 595 Connection refused
+Connection: close
+Cache-Control: max-age=0
+Date: Sun, 16 Feb 2025 10:42:33 GMT
+Expires: Sun, 16 Feb 2025 10:42:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+

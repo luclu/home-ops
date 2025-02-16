@@ -17,7 +17,7 @@
 #   tags        = each.value.tags
 #   #efidisk {
 #   #  efitype = "4m"
-#   #  storage = "ssd1"
+#   #  storage = "nvme"
 #   #}
 #   #vga {
 #   #  type = "qxl"
@@ -40,9 +40,9 @@
 #     scsi {
 #       scsi0 {
 #         disk {
-#           size            = 32
-#           cache           = "writeback"
-#           storage         = "ssd1"
+#           size            = 256
+#           #cache           = "writeback"
+#           storage         = "nvme"
 #           discard         = true
 #           emulatessd      = true
 #         }
