@@ -28,8 +28,8 @@ spec:
       replicaCount: 2
       service:
         annotations:
-          external-dns.alpha.kubernetes.io/hostname: &hostname internal.devbu.io
-          lbipam.cilium.io/ips: 192.168.42.121
+          external-dns.alpha.kubernetes.io/hostname: &hostname internal.${SECRET_DOMAIN}"
+          lbipam.cilium.io/ips: 192.168.5.98
       ingressClassResource:
         name: internal
         default: true
@@ -73,7 +73,7 @@ spec:
           namespaceSelector:
             any: true
       extraArgs:
-        default-ssl-certificate: cert-manager/devbu-io-tls
+        default-ssl-certificate: cert-manager/${SECRET_DOMAIN}-tls
         publish-status-address: *hostname
       terminationGracePeriodSeconds: 120
       publishService:

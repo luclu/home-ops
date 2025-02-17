@@ -77,7 +77,7 @@ spec:
           - port: http
     ingress:
       app:
-        className: external
+        className: internal
         hosts:
           - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
